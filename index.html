@@ -1,0 +1,1368 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人教版八年级上册 · 期中历史知识汇总讲解</title>
+<style>
+  :root {
+    /* ===== 暗色主题变量 ===== */
+    --ink: #e6e1d6;
+    --ink-2: #adb6c2;
+    --muted: #6f7a8a;
+    --paper: #0f141b;
+    --card: #161c25;
+    --card-2: #1b222d;
+    --line: #2a3441;
+    --line-soft: #212a35;
+    --red: #d4564a;
+    --red-deep: #ec7d6e;
+    --gold: #d1a05a;
+    --gold-deep: #e6bb7a;
+    --blue: #5b8fb4;
+    --blue-deep: #82b4d6;
+    --green: #6eab7c;
+    --shadow-sm: 0 2px 8px rgba(0,0,0,.35);
+    --shadow: 0 14px 38px -12px rgba(0,0,0,.65), 0 2px 6px rgba(0,0,0,.35);
+    --shadow-lg: 0 26px 60px -20px rgba(0,0,0,.8), 0 4px 12px rgba(0,0,0,.45);
+    --radius: 18px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body {
+    font-family: "Noto Serif SC", "Source Han Serif SC", "Songti SC", Georgia, "Times New Roman", serif;
+    color: var(--ink);
+    background: var(--paper);
+    line-height: 1.78;
+    min-height: 100vh;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ====== 暗色肌理：两层伪元素 ====== */
+  body::before {
+    content: "";
+    position: fixed; inset: 0;
+    pointer-events: none; z-index: 0;
+    background:
+      radial-gradient(ellipse 70% 55% at 8% -4%, rgba(209,160,90,.08), transparent 60%),
+      radial-gradient(ellipse 60% 50% at 98% 0%, rgba(91,143,180,.10), transparent 60%),
+      radial-gradient(ellipse 90% 60% at 50% 106%, rgba(212,86,74,.07), transparent 65%),
+      linear-gradient(180deg, #131a23 0%, var(--paper) 48%, #0b1016 100%);
+  }
+  body::after {
+    content: "";
+    position: fixed; inset: 0;
+    pointer-events: none; z-index: 0;
+    background-image:
+      repeating-linear-gradient(0deg, rgba(255,255,255,.012) 0 1px, transparent 1px 4px),
+      repeating-linear-gradient(90deg, rgba(255,255,255,.009) 0 1px, transparent 1px 5px);
+    opacity: .5;
+  }
+
+  /* ============ 顶部导航 ============ */
+  .topbar {
+    position: sticky; top: 0; z-index: 50;
+    backdrop-filter: blur(18px) saturate(140%);
+    -webkit-backdrop-filter: blur(18px) saturate(140%);
+    background: rgba(15,20,27,.82);
+    border-bottom: 1px solid rgba(255,255,255,.06);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.04), 0 8px 30px -16px rgba(0,0,0,.9);
+  }
+  .scroll-progress {
+    position: absolute; left: 0; bottom: -1px; height: 2px; width: 0;
+    background: linear-gradient(90deg, var(--red), var(--gold) 55%, var(--blue));
+    border-radius: 0 3px 3px 0;
+    box-shadow: 0 0 10px rgba(209,160,90,.55);
+  }
+  .nav-inner {
+    max-width: 1180px; margin: 0 auto;
+    display: flex; align-items: center; gap: 18px;
+    padding: 11px 22px;
+  }
+  .brand {
+    display: flex; align-items: center; gap: 10px;
+    font-weight: 800; letter-spacing: .6px; white-space: nowrap;
+    color: var(--ink); font-size: 15px;
+  }
+  .brand-mark {
+    width: 32px; height: 32px; border-radius: 10px;
+    background: linear-gradient(150deg, #c1483a 0%, var(--red) 42%, #a33b30 100%);
+    display: grid; place-items: center; color: #fff;
+    font-size: 14px; font-weight: 900; letter-spacing: 0;
+    box-shadow:
+      0 6px 16px -4px rgba(212,86,74,.5),
+      inset 0 1px 0 rgba(255,255,255,.28),
+      inset 0 -2px 6px rgba(0,0,0,.22);
+  }
+  .nav-links {
+    display: flex; gap: 3px; overflow-x: auto; scrollbar-width: none; flex: 1;
+    -webkit-mask-image: linear-gradient(90deg, #000 92%, transparent);
+            mask-image: linear-gradient(90deg, #000 92%, transparent);
+    scroll-snap-type: x proximity;
+  }
+  .nav-links::-webkit-scrollbar { display: none; }
+  .nav-links a {
+    flex: 0 0 auto; position: relative;
+    text-decoration: none; color: var(--muted);
+    font-size: 13px; font-weight: 700;
+    padding: 7px 12px; border-radius: 999px;
+    scroll-snap-align: start;
+    transition: color .22s ease, background .22s ease, transform .22s ease;
+  }
+  .nav-links a::after {
+    content: ""; position: absolute; left: 12px; right: 12px; bottom: 3px; height: 1.5px;
+    background: linear-gradient(90deg, var(--red), var(--gold));
+    transform: scaleX(0); transform-origin: left; border-radius: 2px;
+    transition: transform .28s cubic-bezier(.4,0,.2,1);
+  }
+  .nav-links a:hover { color: var(--red-deep); background: rgba(212,86,74,.12); transform: translateY(-1px); }
+  .nav-links a:hover::after { transform: scaleX(1); }
+
+  /* ============ 封面 ============ */
+  .hero {
+    position: relative; z-index: 1;
+    max-width: 1180px; margin: 0 auto;
+    padding: 70px 22px 46px;
+  }
+  .hero::before {
+    content: ""; position: absolute; left: 22px; right: 22px; top: 34px; height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(209,160,90,.45), transparent);
+  }
+  .hero-kicker {
+    display: inline-flex; align-items: center; gap: 9px;
+    font-size: 11.5px; letter-spacing: 2.6px; font-weight: 800;
+    color: var(--red-deep); text-transform: uppercase;
+    border: 1px solid rgba(212,86,74,.32);
+    background: linear-gradient(180deg, rgba(212,86,74,.12), rgba(212,86,74,.04));
+    padding: 8px 15px; border-radius: 999px;
+    margin-bottom: 24px;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.05);
+  }
+  .hero-kicker::before {
+    content: ""; width: 6px; height: 6px; border-radius: 50%;
+    background: var(--red); box-shadow: 0 0 0 3px rgba(212,86,74,.2);
+  }
+  .hero h1 {
+    font-size: clamp(30px, 5vw, 54px);
+    line-height: 1.24; letter-spacing: -1.2px;
+    font-weight: 900; max-width: 900px;
+    text-wrap: balance;
+  }
+  .hero h1 em {
+    font-style: normal; color: var(--red-deep);
+    background: linear-gradient(transparent 63%, rgba(209,160,90,.26) 63%);
+    padding: 0 3px;
+    -webkit-box-decoration-break: clone;
+            box-decoration-break: clone;
+  }
+  .hero-sub {
+    margin-top: 20px; max-width: 790px;
+    color: var(--ink-2); font-size: 16px;
+    text-align: justify;
+  }
+  .hero-meta {
+    margin-top: 30px; display: flex; flex-wrap: wrap; gap: 10px;
+  }
+  .chip {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 9px 15px; border-radius: 999px;
+    border: 1px solid var(--line); background: var(--card);
+    font-size: 13px; font-weight: 700; color: var(--ink-2);
+    box-shadow: var(--shadow-sm), inset 0 1px 0 rgba(255,255,255,.04);
+    transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+  }
+  .chip:hover {
+    transform: translateY(-2px);
+    border-color: rgba(209,160,90,.5);
+    box-shadow: 0 10px 22px -12px rgba(0,0,0,.7);
+  }
+  .chip b { color: var(--red-deep); font-size: 14.5px; }
+  .hero-quote {
+    position: relative;
+    margin-top: 36px;
+    border-left: 3px solid transparent;
+    border-image: linear-gradient(180deg, var(--gold), rgba(209,160,90,.2)) 1;
+    padding: 6px 0 6px 20px;
+    max-width: 830px;
+    color: var(--ink-2); font-size: 15px;
+  }
+  .hero-quote strong { color: var(--ink); }
+
+  /* 封面印章 */
+  .hero-seal {
+    position: absolute; right: 26px; top: 70px;
+    width: 78px; height: 78px;
+    display: grid; place-items: center;
+    writing-mode: vertical-rl;
+    font-size: 13px; font-weight: 900; letter-spacing: 4px;
+    color: rgba(236,125,110,.55);
+    border: 2px solid rgba(236,125,110,.3);
+    border-radius: 12px;
+    transform: rotate(7deg);
+    box-shadow: 0 0 0 1px rgba(255,255,255,.04) inset;
+    user-select: none;
+  }
+  @media (max-width: 1080px) { .hero-seal { display: none; } }
+
+  /* ============ 布局 ============ */
+  .wrap {
+    position: relative; z-index: 1;
+    max-width: 1180px; margin: 0 auto;
+    padding: 0 22px 90px;
+  }
+  section { scroll-margin-top: 84px; margin-top: 60px; }
+
+  .sec-head {
+    display: flex; align-items: flex-end; gap: 16px;
+    margin-bottom: 12px; flex-wrap: wrap;
+    position: relative;
+  }
+  .sec-num {
+    font-size: 12px; font-weight: 900; letter-spacing: 2.2px;
+    color: var(--gold-deep);
+    border-bottom: 2px solid;
+    border-image: linear-gradient(90deg, var(--gold), rgba(209,160,90,.15)) 1;
+    padding-bottom: 5px; white-space: nowrap;
+  }
+  .sec-head h2 {
+    font-size: clamp(22px, 3.2vw, 33px);
+    line-height: 1.3; font-weight: 900; letter-spacing: -.6px;
+    text-wrap: balance;
+  }
+  .sec-head h2 span { color: var(--red-deep); }
+  .sec-desc {
+    color: var(--muted); font-size: 14px; max-width: 780px;
+    margin: 12px 0 24px;
+  }
+
+  /* ============ 阶段总览 ============ */
+  .phase-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px;
+  }
+  .phase-card {
+    position: relative; overflow: hidden;
+    background: linear-gradient(170deg, #1d2530 0%, var(--card) 62%, #131920 100%);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 26px 22px 22px;
+    box-shadow: var(--shadow);
+    transition: transform .32s cubic-bezier(.4,0,.2,1), box-shadow .32s ease;
+  }
+  .phase-card::before {
+    content: ""; position: absolute; left: 0; top: 0; width: 100%; height: 4px;
+  }
+  .phase-card::after {
+    content: ""; position: absolute; right: -40px; bottom: -40px;
+    width: 130px; height: 130px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(209,160,90,.12), transparent 70%);
+    pointer-events: none;
+  }
+  .phase-card.p1::before { background: linear-gradient(90deg, var(--red), rgba(212,86,74,.2)); }
+  .phase-card.p2::before { background: linear-gradient(90deg, var(--gold), rgba(209,160,90,.2)); }
+  .phase-card.p3::before { background: linear-gradient(90deg, var(--blue), rgba(91,143,180,.2)); }
+  .phase-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
+
+  .phase-tag {
+    display: inline-block; font-size: 11px; font-weight: 900;
+    letter-spacing: 1.6px; padding: 5px 10px; border-radius: 7px;
+    margin-bottom: 13px;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.05);
+  }
+  .p1 .phase-tag { background: rgba(212,86,74,.16); color: var(--red-deep); }
+  .p2 .phase-tag { background: rgba(209,160,90,.16); color: var(--gold-deep); }
+  .p3 .phase-tag { background: rgba(91,143,180,.16); color: var(--blue-deep); }
+  .phase-card h3 { font-size: 18.5px; margin-bottom: 9px; letter-spacing: -.3px; }
+  .phase-card p { font-size: 13.5px; color: var(--ink-2); }
+  .phase-card .phase-arrow {
+    margin-top: 16px; font-size: 12.5px; font-weight: 800;
+    color: var(--muted); padding-top: 12px;
+    border-top: 1px dashed var(--line);
+  }
+
+  /* ============ 单元 ============ */
+  .unit {
+    margin-top: 46px;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 24px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+  }
+  .unit-banner {
+    position: relative;
+    display: flex; align-items: center; gap: 16px;
+    padding: 22px 26px;
+    background:
+      radial-gradient(ellipse 60% 160% at 96% 50%, rgba(209,160,90,.20), transparent 65%),
+      linear-gradient(105deg, #121a24 0%, #1b2532 58%, #222d3b 100%);
+    color: #f0eadf; flex-wrap: wrap;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(255,255,255,.06);
+  }
+  .unit-banner::after {
+    content: ""; position: absolute; inset: 0;
+    background-image:
+      repeating-linear-gradient(45deg, rgba(255,255,255,.025) 0 2px, transparent 2px 9px);
+    pointer-events: none;
+  }
+  .unit-badge {
+    flex: 0 0 auto; position: relative; z-index: 1;
+    font-size: 12px; font-weight: 900; letter-spacing: 2.2px;
+    background: linear-gradient(160deg, #d9ad62, var(--gold));
+    color: #241d12;
+    padding: 7px 13px; border-radius: 8px;
+    box-shadow: 0 5px 14px -5px rgba(209,160,90,.8), inset 0 1px 0 rgba(255,255,255,.45);
+  }
+  .unit-banner h3 { position: relative; z-index: 1; font-size: clamp(18px, 2.6vw, 24px); font-weight: 900; }
+  .unit-banner small {
+    position: relative; z-index: 1;
+    color: rgba(240,234,223,.5); font-size: 12.5px;
+    margin-left: auto; letter-spacing: .8px;
+  }
+  .unit-body { padding: 26px; }
+
+  /* ============ 课卡 ============ */
+  .lesson {
+    border: 1px solid var(--line-soft);
+    border-radius: 16px;
+    background: var(--card-2);
+    margin-bottom: 22px; overflow: hidden;
+    box-shadow: 0 1px 2px rgba(0,0,0,.2);
+    transition: box-shadow .3s ease, border-color .3s ease;
+  }
+  .lesson:hover {
+    border-color: rgba(209,160,90,.4);
+    box-shadow: 0 12px 30px -18px rgba(0,0,0,.9);
+  }
+  .lesson:last-child { margin-bottom: 0; }
+  .lesson-head {
+    display: flex; align-items: center; gap: 12px;
+    padding: 15px 20px;
+    border-bottom: 1px solid var(--line-soft);
+    background: linear-gradient(180deg, rgba(255,255,255,.035), rgba(255,255,255,.008));
+  }
+  .lesson-no {
+    flex: 0 0 auto;
+    width: 31px; height: 31px; border-radius: 9px;
+    display: grid; place-items: center;
+    font-size: 12.5px; font-weight: 900;
+    background: linear-gradient(150deg, #c1483a, var(--red) 50%, #a33b30);
+    color: #fff;
+    box-shadow: 0 4px 12px -4px rgba(212,86,74,.7), inset 0 1px 0 rgba(255,255,255,.24);
+  }
+  .lesson-head h4 { font-size: 16.5px; font-weight: 900; letter-spacing: -.2px; }
+  .lesson-head time {
+    margin-left: auto; font-size: 12px; font-weight: 800;
+    color: var(--gold-deep);
+    background: rgba(209,160,90,.13);
+    border: 1px solid rgba(209,160,90,.24);
+    padding: 4px 10px; border-radius: 999px; white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+  }
+  .lesson-body { padding: 20px; }
+
+  /* ============ 通用元素 ============ */
+  .mini-title {
+    font-size: 12px; font-weight: 900; letter-spacing: 1.7px;
+    color: var(--red-deep); margin: 18px 0 9px;
+    display: flex; align-items: center; gap: 9px;
+  }
+  .mini-title:first-child { margin-top: 0; }
+  .mini-title::before {
+    content: ""; width: 4px; height: 15px; border-radius: 3px;
+    background: linear-gradient(var(--red), var(--gold));
+    box-shadow: 0 0 8px rgba(212,86,74,.35);
+  }
+  .lesson p { font-size: 14px; color: var(--ink-2); margin-bottom: 8px; text-align: justify; }
+  .lesson p strong { color: var(--ink); }
+  .lesson ul { list-style: none; margin: 8px 0 12px; }
+  .lesson li {
+    position: relative; padding-left: 19px;
+    font-size: 14px; color: var(--ink-2); margin-bottom: 7px;
+    transition: color .2s ease;
+  }
+  .lesson li::before {
+    content: "▸"; position: absolute; left: 0; top: 0;
+    color: var(--gold); font-size: 12px; font-weight: 900;
+  }
+  .lesson li:hover { color: var(--ink); }
+  .lesson li strong { color: var(--ink); }
+
+  .key {
+    color: var(--red-deep); font-weight: 800;
+    background: linear-gradient(transparent 64%, rgba(209,160,90,.26) 64%);
+    padding: 0 2px;
+    -webkit-box-decoration-break: clone;
+            box-decoration-break: clone;
+  }
+
+  /* 信息条 */
+  .facts {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 10px; margin: 11px 0 16px;
+  }
+  .fact {
+    position: relative;
+    border: 1px solid var(--line-soft);
+    border-radius: 11px;
+    padding: 10px 13px;
+    background: linear-gradient(175deg, #1e2631, #19202a);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.04);
+    transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+  }
+  .fact::before {
+    content: ""; position: absolute; left: 0; top: 12px; bottom: 12px; width: 2px;
+    background: linear-gradient(var(--gold), rgba(209,160,90,.1));
+    border-radius: 2px; opacity: .55;
+  }
+  .fact:hover {
+    transform: translateY(-2px);
+    border-color: rgba(209,160,90,.4);
+    box-shadow: 0 8px 18px -12px rgba(0,0,0,.9);
+  }
+  .fact small {
+    display: block; font-size: 11px; color: var(--muted);
+    font-weight: 700; margin-bottom: 3px; letter-spacing: .4px;
+  }
+  .fact b { font-size: 14px; color: var(--ink); line-height: 1.5; }
+
+  /* 表格 */
+  .table-wrap {
+    overflow-x: auto; margin: 12px 0 16px;
+    border-radius: 13px;
+    border: 1px solid var(--line);
+    box-shadow: 0 4px 16px -12px rgba(0,0,0,.9);
+    -webkit-overflow-scrolling: touch;
+  }
+  table { width: 100%; border-collapse: collapse; min-width: 480px; background: var(--card-2); }
+  th, td { padding: 11px 14px; text-align: left; font-size: 13.5px; vertical-align: top; }
+  thead th {
+    background: linear-gradient(160deg, #283444, #303d4e);
+    color: #f0eadf;
+    font-weight: 800; font-size: 12.5px; letter-spacing: .4px;
+    white-space: nowrap;
+    border-right: 1px solid rgba(255,255,255,.07);
+  }
+  thead th:last-child { border-right: none; }
+  tbody tr:nth-child(even) { background: rgba(255,255,255,.028); }
+  tbody tr:not(:last-child) td { border-bottom: 1px solid rgba(255,255,255,.055); }
+  tbody tr { transition: background .2s ease; }
+  tbody tr:hover { background: rgba(209,160,90,.08); }
+  td strong { color: var(--red-deep); }
+
+  /* 提示框 */
+  .note {
+    position: relative;
+    border-left: 3px solid var(--gold);
+    background: linear-gradient(90deg, rgba(209,160,90,.12), rgba(209,160,90,.03));
+    border-radius: 0 11px 11px 0;
+    padding: 12px 16px; margin: 14px 0;
+    font-size: 13.5px; color: var(--ink-2);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.04);
+  }
+  .note strong { color: var(--gold-deep); }
+  .note.warn {
+    border-left-color: var(--red);
+    background: linear-gradient(90deg, rgba(212,86,74,.12), rgba(212,86,74,.03));
+  }
+  .note.warn strong { color: var(--red-deep); }
+
+  /* 对比两栏 */
+  .split { display: grid; grid-template-columns: 1fr 1fr; gap: 13px; margin: 12px 0 14px; }
+  .split-card {
+    border: 1px solid var(--line-soft);
+    border-radius: 12px;
+    padding: 14px 16px;
+    background: linear-gradient(175deg, #1e2631, #19202a);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.04);
+    transition: transform .25s ease, box-shadow .25s ease;
+  }
+  .split-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 22px -16px rgba(0,0,0,.9);
+  }
+  .split-card h5 {
+    font-size: 13px; font-weight: 900; margin-bottom: 8px;
+    color: var(--blue-deep);
+    display: flex; align-items: center; gap: 7px;
+  }
+  .split-card h5::before {
+    content: ""; width: 6px; height: 6px; border-radius: 50%;
+    background: var(--blue); opacity: .8;
+  }
+  .split-card p, .split-card li { font-size: 13px; }
+
+  /* ============ 条约对比大表 ============ */
+  .compare-table th:first-child { min-width: 96px; }
+  .compare-table td:first-child {
+    font-weight: 900; color: var(--ink);
+    background: rgba(255,255,255,.04);
+    white-space: nowrap;
+  }
+  .compare-table tbody tr:hover td:first-child { background: rgba(209,160,90,.14); }
+
+  /* ============ 易错区 ============ */
+  .mistake-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; }
+  .mistake {
+    position: relative;
+    background: linear-gradient(170deg, #1d2530, var(--card) 60%, #131920);
+    border: 1px solid var(--line);
+    border-radius: 15px;
+    padding: 18px 19px;
+    box-shadow: var(--shadow-sm);
+    transition: transform .28s cubic-bezier(.4,0,.2,1), box-shadow .28s ease, border-color .28s ease;
+  }
+  .mistake::before {
+    content: ""; position: absolute; left: 0; top: 16px; bottom: 16px; width: 3px;
+    border-radius: 0 3px 3px 0;
+    background: linear-gradient(var(--red), rgba(212,86,74,.1));
+  }
+  .mistake::after {
+    content: "易错"; position: absolute; right: 13px; top: 13px;
+    font-size: 10px; font-weight: 900; letter-spacing: 1.2px;
+    color: #fff;
+    background: linear-gradient(150deg, #c1483a, #a33b30);
+    padding: 3px 8px; border-radius: 5px;
+    box-shadow: 0 3px 8px -3px rgba(212,86,74,.8);
+  }
+  .mistake:hover {
+    transform: translateY(-3px);
+    border-color: rgba(212,86,74,.35);
+    box-shadow: 0 16px 32px -20px rgba(0,0,0,.95);
+  }
+  .mistake h5 {
+    font-size: 14.5px; font-weight: 900;
+    padding-right: 50px; margin-bottom: 8px;
+    line-height: 1.5;
+  }
+  .mistake p { font-size: 13.5px; color: var(--ink-2); }
+  .mistake p .wrong {
+    color: var(--red); text-decoration: line-through;
+    text-decoration-thickness: 1.5px; font-weight: 700;
+  }
+  .mistake p .right { color: var(--green); font-weight: 800; }
+
+  /* ============ 时间轴 ============ */
+  .timeline { position: relative; margin: 22px 0 6px; padding-left: 30px; }
+  .timeline::before {
+    content: ""; position: absolute; left: 7px; top: 6px; bottom: 6px;
+    width: 2px; border-radius: 2px;
+    background: linear-gradient(180deg, var(--red), var(--gold) 50%, var(--blue));
+    box-shadow: 0 0 12px rgba(209,160,90,.3);
+  }
+  .t-item { position: relative; margin-bottom: 18px; transition: transform .25s ease; }
+  .t-item:hover { transform: translateX(3px); }
+  .t-item::before {
+    content: ""; position: absolute; left: -26.5px; top: 7px;
+    width: 10px; height: 10px; border-radius: 50%;
+    background: var(--card); border: 2.5px solid var(--red);
+    box-shadow: 0 0 0 3px rgba(212,86,74,.16);
+    transition: box-shadow .25s ease, transform .25s ease;
+  }
+  .t-item:hover::before { transform: scale(1.18); box-shadow: 0 0 0 5px rgba(212,86,74,.18); }
+  .t-item:nth-child(3n+2)::before { border-color: var(--gold); box-shadow: 0 0 0 3px rgba(209,160,90,.16); }
+  .t-item:nth-child(3n)::before { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(91,143,180,.16); }
+  .t-year {
+    font-size: 12px; font-weight: 900; letter-spacing: .9px;
+    color: var(--red-deep); margin-bottom: 3px;
+    font-variant-numeric: tabular-nums;
+  }
+  .t-item:nth-child(3n+2) .t-year { color: var(--gold-deep); }
+  .t-item:nth-child(3n) .t-year { color: var(--blue-deep); }
+  .t-body { font-size: 14px; color: var(--ink-2); }
+  .t-body b { color: var(--ink); }
+
+  /* ============ 主题线索 ============ */
+  .thread-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; }
+  .thread {
+    position: relative; overflow: hidden;
+    background: linear-gradient(170deg, #1d2530, var(--card) 62%, #131920);
+    border: 1px solid var(--line);
+    border-radius: 15px; padding: 20px;
+    box-shadow: var(--shadow-sm);
+    transition: transform .28s cubic-bezier(.4,0,.2,1), box-shadow .28s ease, border-color .28s ease;
+  }
+  .thread::after {
+    content: ""; position: absolute; right: -34px; top: -34px;
+    width: 110px; height: 110px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(91,143,180,.12), transparent 70%);
+    pointer-events: none;
+  }
+  .thread:hover {
+    transform: translateY(-4px);
+    border-color: rgba(91,143,180,.4);
+    box-shadow: var(--shadow-lg);
+  }
+  .thread h5 {
+    font-size: 15px; font-weight: 900; margin-bottom: 8px;
+    color: var(--blue-deep);
+    display: flex; align-items: center; gap: 8px;
+  }
+  .thread h5::before {
+    content: ""; width: 7px; height: 7px; border-radius: 2px;
+    background: linear-gradient(140deg, var(--gold), var(--blue));
+    transform: rotate(45deg);
+  }
+  .thread p { font-size: 13.5px; color: var(--ink-2); }
+  .thread p strong { color: var(--ink); }
+
+  /* ============ 回到顶部 ============ */
+  .to-top {
+    position: fixed; right: 22px; bottom: 26px; z-index: 60;
+    width: 44px; height: 44px; border-radius: 50%;
+    display: grid; place-items: center;
+    font-size: 17px; font-weight: 900; color: #f0eadf;
+    background: linear-gradient(150deg, #2c3745, #161c25);
+    border: 1px solid rgba(209,160,90,.4);
+    box-shadow: 0 12px 28px -10px rgba(0,0,0,.9);
+    cursor: pointer;
+    opacity: 0; visibility: hidden; transform: translateY(14px) scale(.9);
+    transition: opacity .3s ease, transform .3s ease, visibility .3s;
+  }
+  .to-top.show { opacity: 1; visibility: visible; transform: translateY(0) scale(1); }
+  .to-top:hover {
+    background: linear-gradient(150deg, var(--red), #a33b30);
+    border-color: rgba(255,255,255,.25);
+    transform: translateY(-3px) scale(1.04);
+  }
+
+  /* ============ 页脚 ============ */
+  footer {
+    position: relative; z-index: 1;
+    text-align: center; padding: 30px 22px 46px;
+    color: var(--muted); font-size: 12.5px;
+    border-top: 1px solid var(--line);
+    max-width: 1180px; margin: 0 auto;
+  }
+  footer::before {
+    content: ""; position: absolute; left: 50%; top: -1px; transform: translateX(-50%);
+    width: 120px; height: 2px; border-radius: 2px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+  footer b { color: var(--ink-2); letter-spacing: .6px; }
+
+  /* ============ 入场动画 ============ */
+  .reveal {
+    opacity: 0; transform: translateY(20px);
+    transition: opacity .7s cubic-bezier(.22,.7,.3,1), transform .7s cubic-bezier(.22,.7,.3,1);
+    will-change: opacity, transform;
+  }
+  .reveal.in { opacity: 1; transform: none; }
+
+  /* ============ 响应式 ============ */
+  @media (max-width: 880px) {
+    .phase-grid, .mistake-grid, .thread-grid, .split { grid-template-columns: 1fr; }
+    .hero { padding-top: 46px; }
+    .hero::before { top: 24px; }
+    .unit-body { padding: 18px; }
+    .unit-banner small { display: none; }
+    .to-top { right: 14px; bottom: 18px; }
+    .nav-links a { padding: 8px 13px; }
+  }
+  @media (max-width: 520px) {
+    .nav-inner { padding: 8px 12px; gap: 12px; }
+    .brand span:last-child { display: none; }
+    .brand-mark { width: 30px; height: 30px; border-radius: 9px; }
+    .nav-links a { padding: 7px 11px; font-size: 12px; }
+    .wrap { padding: 0 14px 70px; }
+    .hero { padding: 38px 14px 26px; }
+    .hero-sub { font-size: 15px; }
+    .lesson-body { padding: 15px; }
+    .lesson-head { padding: 13px 15px; gap: 10px; }
+    .lesson-head h4 { font-size: 15.5px; }
+    .facts { grid-template-columns: 1fr 1fr; }
+    section { margin-top: 46px; }
+    th, td { padding: 9px 11px; font-size: 13px; }
+    .unit-body { padding: 14px; }
+    .unit-banner { padding: 18px; }
+    .sec-head h2 { font-size: 21px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: .01ms !important;
+      transition-duration: .01ms !important;
+    }
+    .reveal { opacity: 1; transform: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ==================== 顶部导航 ==================== -->
+<div class="topbar">
+  <div class="nav-inner">
+    <div class="brand">
+      <span class="brand-mark">史</span>
+      <span>八上历史 · 期中</span>
+    </div>
+    <nav class="nav-links">
+      <a href="#overview">阶段总览</a>
+      <a href="#unit1">第一单元</a>
+      <a href="#unit2">第二单元</a>
+      <a href="#compare">条约对比</a>
+      <a href="#mistakes">易错辨析</a>
+      <a href="#timeline">时间轴</a>
+      <a href="#threads">线索归纳</a>
+    </nav>
+  </div>
+  <div class="scroll-progress"></div>
+</div>
+
+<!-- ==================== 封面 ==================== -->
+<header class="hero">
+  <div class="hero-seal" aria-hidden="true">期中复习</div>
+
+  <div class="hero-kicker">统编版 · 八年级上册 · 期中范围</div>
+  <h1>列强侵略步步深，<br>救亡探索层层起。<br><em>半殖民地半封建社会的形成</em></h1>
+  <p class="hero-sub">
+    期中考查的核心，是一条“侵略—抗争—探索”的双线：从1840年鸦片战争到1901年《辛丑条约》，
+    中国如何一步一步沦为半殖民地半封建社会；地主阶级、农民阶级、资产阶级维新派又各自做出了怎样的回应。
+  </p>
+  <div class="hero-meta">
+    <span class="chip"><b>4</b> 次主要侵华战争</span>
+    <span class="chip"><b>5</b> 个核心不平等条约</span>
+    <span class="chip"><b>3</b> 种救亡方案</span>
+    <span class="chip"><b>1840—1901</b> 六十一年</span>
+  </div>
+  <div class="hero-quote">
+    <strong>一句话把握阶段特征：</strong>鸦片战争“开始沦为”→第二次鸦片战争“进一步加深”→甲午战争“大大加深”→八国联军侵华“完全沦为”。
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- ==================== 阶段总览 ==================== -->
+  <section id="overview">
+    <div class="sec-head">
+      <div class="sec-num">00 / OVERVIEW</div>
+      <h2>阶段总览：<span>四条主线，一条总趋势</span></h2>
+    </div>
+    <p class="sec-desc">
+      不要孤立背条约，先建立“侵略加深—抗争兴起—探索转型”的框架，再把每课细节挂上去。
+    </p>
+    <div class="phase-grid">
+      <div class="phase-card p1">
+        <span class="phase-tag">开始沦为</span>
+        <h3>两次鸦片战争 + 太平天国</h3>
+        <p>英国用炮舰打开国门，《南京条约》使中国开始沦为半殖民地半封建社会；第二次鸦片战争进一步加深危机，沙俄趁机割占北方大片领土；太平天国则从内部动摇清朝统治。</p>
+        <div class="phase-arrow">社会性质：开始沦为半殖民地半封建社会</div>
+      </div>
+      <div class="phase-card p2">
+        <span class="phase-tag">危机加剧</span>
+        <h3>洋务运动 + 甲午战争 + 瓜分狂潮</h3>
+        <p>地主阶级洋务派以“自强”“求富”开启近代化，但甲午战败宣告洋务运动破产；《马关条约》使中国半殖民地化程度大大加深，列强掀起瓜分中国狂潮。</p>
+        <div class="phase-arrow">探索主题：器物层面的近代化尝试</div>
+      </div>
+      <div class="phase-card p3">
+        <span class="phase-tag">完全沦为</span>
+        <h3>戊戌变法 + 义和团 + 八国联军</h3>
+        <p>资产阶级维新派试图以君主立宪救亡，百日维新昙花一现；义和团以“扶清灭洋”反抗侵略，却存在盲目排外局限；《辛丑条约》使中国完全陷入半殖民地半封建社会的深渊。</p>
+        <div class="phase-arrow">社会性质：完全沦为半殖民地半封建社会</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 第一单元 ==================== -->
+  <section id="unit1">
+    <div class="sec-head">
+      <div class="sec-num">01 / UNIT ONE</div>
+      <h2>第一单元：<span>中国开始沦为半殖民地半封建社会</span></h2>
+    </div>
+
+    <div class="unit">
+      <div class="unit-banner">
+        <span class="unit-badge">第1—3课</span>
+        <h3>两次鸦片战争与太平天国运动</h3>
+        <small>侵略与反抗同时展开</small>
+      </div>
+      <div class="unit-body">
+
+        <!-- 第1课 -->
+        <article class="lesson">
+          <div class="lesson-head">
+            <span class="lesson-no">1</span>
+            <h4>鸦片战争</h4>
+            <time>1840—1842</time>
+          </div>
+          <div class="lesson-body">
+            <div class="mini-title">背景与导火索</div>
+            <div class="facts">
+              <div class="fact"><small>根本原因</small><b>英国打开中国市场</b></div>
+              <div class="fact"><small>直接原因</small><b>林则徐虎门销烟</b></div>
+              <div class="fact"><small>爆发</small><b>1840年6月</b></div>
+              <div class="fact"><small>结束</small><b>1842年8月</b></div>
+            </div>
+            <p>
+              19世纪上半期，英国完成工业革命，急需打开中国市场、掠夺原料。中英正当贸易中，中国处于出超地位，英国便向中国大量走私鸦片。
+              <span class="key">1839年6月3日至25日，林则徐在虎门海滩当众销毁鸦片</span>，虎门销烟是中国人民禁烟斗争的伟大胜利，显示了中华民族反抗外来侵略的坚强意志[reference:0]。
+            </p>
+            <div class="note warn">
+              <strong>高频易错：</strong>虎门销烟是鸦片战争的<strong>直接原因（借口）</strong>，不是根本原因。根本原因是英国为了打开中国市场、倾销商品、掠夺原料。
+            </div>
+
+            <div class="mini-title">《南京条约》——中国近代第一个不平等条约</div>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>条款</th><th>内容</th><th>危害</th></tr></thead>
+                <tbody>
+                  <tr><td><strong>割地</strong></td><td>割香港岛给英国</td><td>破坏领土主权完整</td></tr>
+                  <tr><td><strong>赔款</strong></td><td>2100万银元</td><td>加剧财政危机，加重人民负担</td></tr>
+                  <tr><td><strong>通商</strong></td><td>开放广州、厦门、福州、宁波、上海五处为通商口岸</td><td>破坏贸易主权，便利外国商品输出</td></tr>
+                  <tr><td><strong>关税</strong></td><td>英商进出口货物应纳税款，须双方协议</td><td>中国失去关税自主权</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p>
+              1843年英国又强迫清政府签订《虎门条约》，获取领事裁判权、片面最惠国待遇等；1844年美国、法国分别强迫清政府签订《望厦条约》《黄埔条约》[reference:2]。
+            </p>
+            <div class="note">
+              <strong>影响：</strong>鸦片战争改变了中国历史发展的进程。中国丧失了完整独立的主权，自然经济遭到破坏，<span class="key">开始从封建社会变为半殖民地半封建社会</span>。鸦片战争成为中国近代史的开端[reference:3]。
+            </div>
+          </div>
+        </article>
+
+        <!-- 第2课 -->
+        <article class="lesson">
+          <div class="lesson-head">
+            <span class="lesson-no">2</span>
+            <h4>第二次鸦片战争</h4>
+            <time>1856—1860</time>
+          </div>
+          <div class="lesson-body">
+            <div class="mini-title">战争概况</div>
+            <div class="facts">
+              <div class="fact"><small>根本目的</small><b>进一步打开中国市场</b></div>
+              <div class="fact"><small>主凶</small><b>英、法</b></div>
+              <div class="fact"><small>帮凶</small><b>美、俄</b></div>
+              <div class="fact"><small>借口</small><b>“亚罗号事件”“马神甫事件”</b></div>
+            </div>
+            <p>
+              英法分别以“亚罗号事件”和“马神甫事件”为借口发动战争。1860年英法联军攻入北京，<span class="key">火烧圆明园</span>，这是人类文明史上的一场浩劫[reference:4]。
+            </p>
+
+            <div class="mini-title">主要条约</div>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>条约</th><th>时间</th><th>核心内容</th></tr></thead>
+                <tbody>
+                  <tr>
+                    <td><strong>《天津条约》</strong></td>
+                    <td>1858</td>
+                    <td>外国公使进驻北京；增开汉口、南京等十处通商口岸；外国商船和军舰可在长江各口岸自由航行</td>
+                  </tr>
+                  <tr>
+                    <td><strong>《北京条约》</strong></td>
+                    <td>1860</td>
+                    <td>承认《天津条约》继续有效；增开天津为商埠；割九龙司地方一区给英国；增加赔款</td>
+                  </tr>
+                  <tr>
+                    <td><strong>沙俄侵占领土</strong></td>
+                    <td>前后共</td>
+                    <td>割占中国东北和西北领土<strong>150多万平方千米</strong>，是割占中国领土最多的国家；《瑷珲条约》割地最多</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="note warn">
+              <strong>高频易错：</strong>火烧圆明园的是<strong>英法联军</strong>，不是八国联军。八国联军侵华发生在1900年，两者相差40年。
+            </div>
+            <div class="note">
+              <strong>影响：</strong>中国丧失更多主权，西方侵略势力由东南沿海深入长江中下游地区，俄国侵占北方大片领土，<span class="key">中国半殖民地化程度进一步加深</span>。
+            </div>
+          </div>
+        </article>
+
+        <!-- 第3课 -->
+        <article class="lesson">
+          <div class="lesson-head">
+            <span class="lesson-no">3</span>
+            <h4>太平天国运动</h4>
+            <time>1851—1864</time>
+          </div>
+          <div class="lesson-body">
+            <div class="mini-title">兴亡线索</div>
+            <div class="facts">
+              <div class="fact"><small>开始</small><b>1851 金田起义</b></div>
+              <div class="fact"><small>定都</small><b>1853 天京</b></div>
+              <div class="fact"><small>由盛转衰</small><b>天京事变</b></div>
+              <div class="fact"><small>失败</small><b>1864 天京陷落</b></div>
+            </div>
+            <p>
+              1851年洪秀全在广西桂平金田村发动武装起义，建号“太平天国”。1853年攻占南京，改名天京，作为都城，与清政府对峙。太平天国后期，天京事变由盛转衰，1864年天京陷落，运动失败。
+            </p>
+
+            <div class="mini-title">两个纲领性文件</div>
+            <div class="split">
+              <div class="split-card">
+                <h5>《天朝田亩制度》</h5>
+                <p>核心是解决土地问题，主张“有田同耕，有饭同食”，反映农民平均分配土地的愿望，但具有空想性，<strong>并未实施</strong>。</p>
+              </div>
+              <div class="split-card">
+                <h5>《资政新篇》</h5>
+                <p>洪仁玕提出，是近代中国最早提出发展资本主义的方案，但<strong>也未实施</strong>，没有引起农民强烈反应。</p>
+              </div>
+            </div>
+            <div class="note warn">
+              <strong>高频易错：</strong>太平天国运动是<strong>农民阶级</strong>领导的运动，不是资产阶级革命；《资政新篇》虽然带有资本主义色彩，但不能改变太平天国运动的农民战争性质。
+            </div>
+            <p>
+              <strong>历史意义：</strong>太平天国运动是中国历史上规模最宏大的一次农民战争，沉重打击了清朝统治和外国侵略势力，但农民阶级的局限性决定了它无法提出科学的革命纲领，最终失败。
+            </p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 第二单元 ==================== -->
+  <section id="unit2">
+    <div class="sec-head">
+      <div class="sec-num">02 / UNIT TWO</div>
+      <h2>第二单元：<span>近代化的早期探索与民族危机加剧</span></h2>
+    </div>
+
+    <div class="unit">
+      <div class="unit-banner">
+        <span class="unit-badge">第4—7课</span>
+        <h3>洋务运动 · 甲午战争 · 戊戌变法 · 八国联军</h3>
+        <small>器物—制度—全面危机</small>
+      </div>
+      <div class="unit-body">
+
+        <!-- 第4课 -->
+        <article class="lesson">
+          <div class="lesson-head">
+            <span class="lesson-no">4</span>
+            <h4>洋务运动</h4>
+            <time>19世纪60—90年代</time>
+          </div>
+          <div class="lesson-body">
+            <div class="mini-title">核心信息</div>
+            <div class="facts">
+              <div class="fact"><small>领导阶级</small><b>地主阶级洋务派</b></div>
+              <div class="fact"><small>口号</small><b>自强 → 求富</b></div>
+              <div class="fact"><small>根本目的</small><b>维护清朝统治</b></div>
+              <div class="fact"><small>破产标志</small><b>甲午战争北洋舰队覆没</b></div>
+            </div>
+
+            <div class="mini-title">主要成就</div>
+            <ul>
+              <li><strong>军事工业：</strong>安庆内军械所、江南制造总局（国内最大兵工厂）、福州船政局等。</li>
+              <li><strong>民用工业：</strong>轮船招商局、开平煤矿、汉阳铁厂、湖北织布局等。</li>
+              <li><strong>近代海军：</strong>建立北洋、南洋、福建三支海军。</li>
+              <li><strong>教育：</strong>兴办新式学堂（如京师同文馆），派遣留学生出国深造。</li>
+            </ul>
+
+            <div class="mini-title">如何评价洋务运动</div>
+            <div class="split">
+              <div class="split-card">
+                <h5>进步性</h5>
+                <p>是中国历史上<strong>第一次近代化运动</strong>；客观上促进了中国民族资本主义的产生；对外国资本入侵起到一定抵制作用；推动了中国近代教育的发展。</p>
+              </div>
+              <div class="split-card">
+                <h5>局限性</h5>
+                <p>根本目的是维护清朝封建统治，<strong>只学西方技术，不改变封建制度</strong>；对西方列强有依赖性；内部腐败，最终没有使中国走上富强道路。</p>
+              </div>
+            </div>
+            <div class="note warn">
+              <strong>高频易错：</strong>洋务运动学习的是西方<strong>器物（技术）</strong>，不是制度；其失败的根本原因是没有变革落后的封建制度，而不是“技术不够先进”[reference:13]。
+            </div>
+          </div>
+        </article>
+
+        <!-- 第5课 -->
+        <article class="lesson">
+          <div class="lesson-head">
+            <span class="lesson-no">5</span>
+            <h4>甲午中日战争与列强瓜分中国狂潮</h4>
+            <time>1894—1895</time>
+          </div>
+          <div class="lesson-body">
+            <div class="mini-title">重要战役与英雄</div>
+            <div class="facts">
+              <div class="fact"><small>黄海海战</small><b>邓世昌壮烈殉国</b></div>
+              <div class="fact"><small>威海卫战役</small><b>北洋舰队全军覆没</b></div>
+              <div class="fact"><small>结果</small><b>清政府战败，签订《马关条约》</b></div>
+            </div>
+
+            <div class="mini-title">《马关条约》——大大加深半殖民地化</div>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>条款</th><th>内容</th><th>关键影响</th></tr></thead>
+                <tbody>
+                  <tr><td><strong>割地</strong></td><td>割辽东半岛、台湾全岛及所有附属各岛屿、澎湖列岛给日本</td><td>严重破坏中国领土主权</td></tr>
+                  <tr><td><strong>赔款</strong></td><td>白银2亿两</td><td>空前加重人民负担</td></tr>
+                  <tr><td><strong>通商</strong></td><td>开放沙市、重庆、苏州、杭州为商埠</td><td>侵略势力深入中国内地</td></tr>
+                  <tr><td><strong>设厂</strong></td><td>允许日本在通商口岸开设工厂</td><td>列强侵华由<strong>商品输出</strong>转为<strong>资本输出</strong></td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="note warn">
+              <strong>高频易错：</strong>“允许日本在通商口岸开设工厂”是《马关条约》<strong>特有</strong>的条款，标志着列强侵华方式从商品输出转向资本输出，这是与《南京条约》最本质的不同之一。
+            </div>
+
+            <div class="mini-title">瓜分中国狂潮</div>
+            <p>
+              《马关条约》签订后，列强掀起瓜分中国的狂潮。三国干涉还辽后，日本向中国索取3000万两白银作为“赎辽费”，列强以此为契机在中国划分势力范围、强租租借地[reference:15]。中华民族危机空前严重。
+            </p>
+          </div>
+        </article>
+
+        <!-- 第6课 -->
+        <article class="lesson">
+          <div class="lesson-head">
+            <span class="lesson-no">6</span>
+            <h4>戊戌变法</h4>
+            <time>1898</time>
+          </div>
+          <div class="lesson-body">
+            <div class="mini-title">从公车上书到百日维新</div>
+            <div class="facts">
+              <div class="fact"><small>序幕</small><b>1895 公车上书</b></div>
+              <div class="fact"><small>领导阶级</small><b>资产阶级维新派</b></div>
+              <div class="fact"><small>核心主张</small><b>君主立宪</b></div>
+              <div class="fact"><small>持续时间</small><b>约103天</b></div>
+            </div>
+            <p>
+              1895年《马关条约》签订后，康有为、梁启超等发动“公车上书”，揭开变法维新运动的序幕。1898年6月11日，光绪帝颁布“明定国是”诏书，变法开始，9月21日慈禧太后发动政变，变法失败，史称“百日维新”[reference:17]。
+            </p>
+
+            <div class="mini-title">主要措施</div>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>领域</th><th>措施</th></tr></thead>
+                <tbody>
+                  <tr><td><strong>政治</strong></td><td>裁撤冗官冗员，允许士民上书言事</td></tr>
+                  <tr><td><strong>经济</strong></td><td>鼓励私人兴办工矿企业，发展农、工、商业</td></tr>
+                  <tr><td><strong>文化教育</strong></td><td>废除八股文，改试策论，创办<strong>京师大学堂</strong></td></tr>
+                  <tr><td><strong>军事</strong></td><td>裁减绿营，训练新式军队</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="note">
+              <strong>京师大学堂：</strong>戊戌变法中创办，是“百日维新”失败后硕果仅存的新政措施，后来发展为北京大学[reference:18]。
+            </div>
+            <div class="note warn">
+              <strong>高频易错：</strong>戊戌变法废除的是<strong>八股文</strong>，不是科举制；科举制是在1905年才被废除的[reference:19]。
+            </div>
+          </div>
+        </article>
+
+        <!-- 第7课 -->
+        <article class="lesson">
+          <div class="lesson-head">
+            <span class="lesson-no">7</span>
+            <h4>义和团运动与八国联军侵华</h4>
+            <time>1898—1901</time>
+          </div>
+          <div class="lesson-body">
+            <div class="mini-title">义和团：“扶清灭洋”</div>
+            <p>
+              义和团由山东、直隶一带的民间秘密组织发展而来，口号是<span class="key">“扶清灭洋”</span>。这一口号表达了中国人民反对帝国主义的斗争意志，但也具有<strong>盲目排外的落后性</strong>，同时反映出义和团对清政府的本质认识不清，抱有幻想[reference:20]。
+            </p>
+            <div class="note warn">
+              <strong>局限性：</strong>义和团没有严密的组织形式，没有先进阶级领导，没有科学理论指导，其失败是农民阶级局限性的又一体现。
+            </div>
+
+            <div class="mini-title">八国联军侵华与《辛丑条约》</div>
+            <div class="facts">
+              <div class="fact"><small>八国</small><b>英、美、法、德、俄、日、意、奥</b></div>
+              <div class="fact"><small>时间</small><b>1900—1901</b></div>
+              <div class="fact"><small>结果</small><b>《辛丑条约》</b></div>
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>条款</th><th>内容</th><th>危害</th></tr></thead>
+                <tbody>
+                  <tr><td><strong>赔款</strong></td><td>白银4.5亿两，分39年还清，本息共约9.8亿两</td><td>空前加重中国人民负担</td></tr>
+                  <tr><td><strong>政治</strong></td><td>清政府严禁人民参加反帝活动</td><td>清政府完全沦为“洋人的朝廷”</td></tr>
+                  <tr><td><strong>军事</strong></td><td>拆毁大沽炮台，允许列强派兵驻扎北京到山海关铁路沿线要地</td><td>严重破坏中国主权完整和国防安全</td></tr>
+                  <tr><td><strong>外交</strong></td><td>划定北京东交民巷为使馆界，中国人不得居住，各国可派兵驻守</td><td>使馆区成为“国中之国”</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="note warn">
+              <strong>最高频易错点：</strong>《辛丑条约》<strong>没有割地，也没有开放通商口岸</strong>。它标志着中国<strong>完全沦为半殖民地半封建社会</strong>[reference:21][reference:22]。
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 条约对比 ==================== -->
+  <section id="compare">
+    <div class="sec-head">
+      <div class="sec-num">03 / COMPARISON</div>
+      <h2>五大条约对比：<span>一张表看清“步步加深”</span></h2>
+    </div>
+    <p class="sec-desc">
+      期中选择题最爱在条约内容之间“张冠李戴”。抓住每个条约的“独有条款”，就能快速排除错误选项。
+    </p>
+
+    <div class="table-wrap">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>对比项</th>
+            <th>《南京条约》1842</th>
+            <th>《天津条约》1858</th>
+            <th>《北京条约》1860</th>
+            <th>《马关条约》1895</th>
+            <th>《辛丑条约》1901</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>战争</td>
+            <td>鸦片战争</td>
+            <td>第二次鸦片战争</td>
+            <td>第二次鸦片战争</td>
+            <td>甲午中日战争</td>
+            <td>八国联军侵华</td>
+          </tr>
+          <tr>
+            <td>割地</td>
+            <td><strong>香港岛</strong></td>
+            <td>—</td>
+            <td><strong>九龙司地方一区</strong></td>
+            <td><strong>辽东半岛、台湾、澎湖列岛</strong></td>
+            <td><strong>无割地</strong></td>
+          </tr>
+          <tr>
+            <td>赔款</td>
+            <td>2100万银元</td>
+            <td>英400万两、法200万两</td>
+            <td>英850万两、法820万两</td>
+            <td><strong>2亿两白银</strong></td>
+            <td><strong>4.5亿两白银</strong></td>
+          </tr>
+          <tr>
+            <td>通商</td>
+            <td>广、厦、福、宁、上（五口）</td>
+            <td>汉口、南京等十处</td>
+            <td><strong>增开天津</strong></td>
+            <td>沙市、重庆、苏州、杭州</td>
+            <td><strong>无新开通商口岸</strong></td>
+          </tr>
+          <tr>
+            <td>独有条款</td>
+            <td><strong>协定关税</strong></td>
+            <td>外国公使进驻北京；<strong>长江自由航行</strong></td>
+            <td>承认《天津条约》有效</td>
+            <td><strong>允许日本开设工厂</strong></td>
+            <td><strong>禁止反帝；使馆界；驻兵</strong></td>
+          </tr>
+          <tr>
+            <td>社会影响</td>
+            <td><strong>开始沦为</strong>半殖民地半封建社会</td>
+            <td>进一步加深</td>
+            <td>进一步加深</td>
+            <td><strong>大大加深</strong></td>
+            <td><strong>完全沦为</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note">
+      <strong>速记口诀：</strong>《南京》割岛开五口，《天津》公使十口游，《北京》天津加九龙，《马关》割台开工厂，《辛丑》不割不开只赔款、使馆驻兵禁反帝。
+    </div>
+  </section>
+
+  <!-- ==================== 易错辨析 ==================== -->
+  <section id="mistakes">
+    <div class="sec-head">
+      <div class="sec-num">04 / TRAPS</div>
+      <h2>期中高频易错辨析：<span>这些“坑”一定要绕开</span></h2>
+    </div>
+
+    <div class="mistake-grid">
+      <div class="mistake">
+        <h5>虎门销烟是根本原因还是直接原因？</h5>
+        <p><span class="wrong">根本原因</span> → <span class="right">直接原因（借口）</span>。英国发动战争的根本原因是打开中国市场，虎门销烟只是导火索。</p>
+      </div>
+      <div class="mistake">
+        <h5>割香港岛 = 割整个香港？</h5>
+        <p><span class="wrong">整个香港</span> → <span class="right">香港岛</span>。《南京条约》割的是香港岛；九龙司地方一区是《北京条约》割的；新界是1898年租借的。</p>
+      </div>
+      <div class="mistake">
+        <h5>火烧圆明园的是八国联军？</h5>
+        <p><span class="wrong">八国联军</span> → <span class="right">英法联军</span>。火烧圆明园发生在1860年第二次鸦片战争期间，不是1900年八国联军侵华。</p>
+      </div>
+      <div class="mistake">
+        <h5>《辛丑条约》割地、开通商口岸？</h5>
+        <p><span class="wrong">有割地、有通商</span> → <span class="right">都没有</span>。《辛丑条约》没有割地、没有开放通商口岸，核心是赔款、禁反帝、划使馆界、驻兵。</p>
+      </div>
+      <div class="mistake">
+        <h5>洋务运动学的是制度？</h5>
+        <p><span class="wrong">制度</span> → <span class="right">器物（技术）</span>。洋务派主张“中体西用”，只学西方技术，不改变封建制度；维新派才主张学制度（君主立宪）。</p>
+      </div>
+      <div class="mistake">
+        <h5>戊戌变法废除了科举制？</h5>
+        <p><span class="wrong">废除科举制</span> → <span class="right">废除八股文</span>。戊戌变法废除的是八股文，科举制直到1905年才被废除。</p>
+      </div>
+      <div class="mistake">
+        <h5>《马关条约》和《南京条约》都有开设工厂？</h5>
+        <p><span class="wrong">都有</span> → <span class="right">只有《马关条约》有</span>。开设工厂是《马关条约》的独有条款，标志着列强侵华从商品输出转向资本输出。</p>
+      </div>
+      <div class="mistake">
+        <h5>太平天国是资产阶级革命？</h5>
+        <p><span class="wrong">资产阶级革命</span> → <span class="right">农民阶级运动</span>。太平天国是农民战争，《资政新篇》虽带资本主义色彩，但未改变运动性质。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 时间轴 ==================== -->
+  <section id="timeline">
+    <div class="sec-head">
+      <div class="sec-num">05 / TIMELINE</div>
+      <h2>期中大事年表：<span>1840—1901</span></h2>
+    </div>
+    <p class="sec-desc">
+      先记时间点，再串成因果链：每一次战争战败，都对应一个不平等条约；每一个条约，都让社会性质再深一层。
+    </p>
+
+    <div class="timeline">
+      <div class="t-item">
+        <div class="t-year">1839</div>
+        <div class="t-body"><b>林则徐虎门销烟</b> —— 鸦片战争的直接导火索</div>
+      </div>
+      <div class="t-item">
+        <div class="t-year">1840—1842</div>
+        <div class="t-body"><b>鸦片战争</b> —— 中国近代史的开端</div>
+      </div>
+      <div class="t-item">
+        <div class="t-year">1842</div>
+        <div class="t-body"><b>《南京条约》</b> —— 中国开始沦为半殖民地半封建社会</div>
+      </div>
+      <div class="t-item">
+        <div class="t-year">1851—1864</div>
+        <div class="t-body"><b>太平天国运动</b> —— 金田起义（1851）→ 定都天京（1853）→ 天京陷落（1864）</div>
+      </div>
+      <div class="t-item">
+        <div class="t-year">1856—1860</div>
+        <div class="t-body"><b>第二次鸦片战争</b> —— 英法联军火烧圆明园（1860）</div>
+      </div>
+      <div class="t-item">
+        <div class="t-year">1858 / 1860</div>
+        <div class="t-body"><b>《天津条约》《北京条约》</b> —— 半殖民地化程度进一步加深</div>
+      </div>
+      <div class="t-item">
+        <div class="t-year">19世纪60—90年代</div>
+        <div class="t-body"><b>洋务运动</b> —— “自强”“求富”，中国近代化的开端</div>
+      </div>
+      <div class="t-item">
+        <div class="t-year">1894—1895</div>
+        <div class="t-body"><b>甲午中日战争</b> —— 黄海海战邓世昌殉国；威海卫战役北洋舰队覆没</div>
+      </div>
+      <div class="t-item">
+        <div class="t-year">1895</div>
+        <div class="t-body"><b>《马关条约》</b> —— 大大加深半殖民地化；<b>公车上书</b>揭开维新变法序幕</div>
+      </div>
+      <div class="t-item">
+        <div class="t-year">1898</div>
+        <div class="t-body"><b>戊戌变法（百日维新）</b> —— 资产阶级维新派的制度探索；创办京师大学堂</div>
+      </div>
+      <div class="t-item">
+        <div class="t-year">1900—1901</div>
+        <div class="t-body"><b>义和团运动高潮 · 八国联军侵华 · 《辛丑条约》</b> —— 中国完全沦为半殖民地半封建社会</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 线索归纳 ==================== -->
+  <section id="threads">
+    <div class="sec-head">
+      <div class="sec-num">06 / THREADS</div>
+      <h2>主题线索归纳：<span>各阶层如何回应民族危机</span></h2>
+    </div>
+
+    <div class="thread-grid">
+      <div class="thread">
+        <h5>地主阶级 · 洋务派</h5>
+        <p><strong>方案：</strong>“自强”“求富”，学习西方器物技术。<strong>实践：</strong>洋务运动（19世纪60—90年代）。<strong>结果：</strong>甲午战败，北洋舰队覆没，宣告破产。<strong>局限：</strong>不改变封建制度，只学技术。</p>
+      </div>
+      <div class="thread">
+        <h5>农民阶级 · 太平天国与义和团</h5>
+        <p><strong>太平天国：</strong>《天朝田亩制度》《资政新篇》，反封建反侵略，但受农民阶级局限。<strong>义和团：</strong>“扶清灭洋”，反帝斗争意志强烈，但盲目排外、对清政府抱有幻想。</p>
+      </div>
+      <div class="thread">
+        <h5>资产阶级维新派 · 戊戌变法</h5>
+        <p><strong>方案：</strong>君主立宪，学习西方政治制度。<strong>实践：</strong>公车上书→百日维新。<strong>结果：</strong>慈禧政变，变法失败。<strong>意义：</strong>在思想文化方面产生了广泛而持久的影响，起到了思想启蒙作用。</p>
+      </div>
+      <div class="thread">
+        <h5>总趋势 · 社会性质步步沉沦</h5>
+        <p><strong>开始沦为：</strong>鸦片战争+《南京条约》。<strong>进一步加深：</strong>第二次鸦片战争+《天津条约》《北京条约》。<strong>大大加深：</strong>甲午战争+《马关条约》。<strong>完全沦为：</strong>八国联军侵华+《辛丑条约》。</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <b>人教版八年级上册 · 期中历史知识汇总</b><br>
+  依据统编版教材第1—7课整理 · 用于期中复习与背诵 · 条约内容与阶段特征以教材表述为准
+</footer>
+
+<button class="to-top" type="button" aria-label="回到顶部">↑</button>
+
+<script>
+(function () {
+  'use strict';
+
+  var docEl = document.documentElement;
+  var bar = document.querySelector('.scroll-progress');
+  var toTop = document.querySelector('.to-top');
+
+  /* ---------- 阅读进度 & 回到顶部 ---------- */
+  function onScroll() {
+    var max = docEl.scrollHeight - docEl.clientHeight;
+    var p = max > 0 ? (docEl.scrollTop / max) : 0;
+    bar.style.width = (p * 100).toFixed(2) + '%';
+    toTop.classList.toggle('show', docEl.scrollTop > 700);
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll);
+  onScroll();
+
+  toTop.addEventListener('click', function () {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  /* ---------- 滚动入场动画 ---------- */
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce || !('IntersectionObserver' in window)) return;
+
+  /* 分组延迟，让卡片依次浮现 */
+  ['.phase-grid', '.mistake-grid', '.thread-grid', '.timeline'].forEach(function (sel) {
+    document.querySelectorAll(sel).forEach(function (group) {
+      Array.prototype.forEach.call(group.children, function (child, i) {
+        child.style.transitionDelay = Math.min(i, 6) * 65 + 'ms';
+      });
+    });
+  });
+
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -70px 0px' });
+
+  document.querySelectorAll('.sec-head, .phase-card, .unit, .mistake, .thread, .t-item')
+    .forEach(function (el) {
+      el.classList.add('reveal');
+      io.observe(el);
+    });
+})();
+</script>
+
+</body>
+</html>
